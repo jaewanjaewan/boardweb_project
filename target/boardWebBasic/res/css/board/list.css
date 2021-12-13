@@ -1,0 +1,36 @@
+#boardTable tr:not(:first-child):hover { /*첫번째 tr빼고 나머지 tr모두다적용해*/
+    background-color: #efefef; cursor: pointer;
+}
+
+.pageContainer{
+    display: flex;
+    padding: 10px 50px;
+    justify-content: center;
+}
+
+.pageContainer div:not(:first-child) {
+    margin-left: 8px;
+}
+
+.selected {
+    color: chocolate;
+    font-weight: bold;
+}
+
+#boardTable{
+    background-color: beige;
+    border-color: aqua;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.frm{
+    justify-content: center;
+    margin-left: 600px;
+    padding-bottom: 10px;
+}
+#cmtcount{
+    background-color: bisque;
+    margin-left: 5px;
+}
