@@ -148,7 +148,7 @@ public class BoardDAO {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "SELECT A.iboard, A.title, A.writer, A.rdt, A.ctnt, B.nm AS writerNm " +
+        String sql = "SELECT A.iboard, A.title, A.writer, A.hit, A.rdt, A.ctnt, B.nm AS writerNm " +
                 "FROM t_board A INNER JOIN t_user B ON A.writer = B.iuser WHERE iboard = ?";
         try {
             con = DbUtils.getCon();
@@ -160,6 +160,7 @@ public class BoardDAO {
                        .iboard(rs.getInt("iboard"))
                        .title(rs.getString("title"))
                        .writer(rs.getInt("writer"))
+                       .hit(rs.getInt("hit"))
                        .rdt(rs.getString("rdt"))
                        .writerNm(rs.getString("writerNm"))
                        .ctnt(rs.getString("ctnt"))

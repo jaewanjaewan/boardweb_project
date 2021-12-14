@@ -43,6 +43,8 @@ public class BoardHeartDAO {
         return 0;
     }
     // 리턴 : 좋아요 했다면 1, 아니면 0  iboard, 로그인한 사람의 iuser 값 필요
+    // 좋아요를 했는지 안했는지 확인하기위한 메소드
+    // select 파라미터 DTO는 FM이다
     public static int selIsHeart(BoardHeartEntity param){
         Connection con = null;
         PreparedStatement ps = null;

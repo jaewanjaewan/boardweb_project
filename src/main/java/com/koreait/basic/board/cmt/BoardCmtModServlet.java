@@ -1,7 +1,7 @@
 package com.koreait.basic.board.cmt;
 
 import com.koreait.basic.Utils;
-import com.koreait.basic.board.model.BoardCmtEntity;
+import com.koreait.basic.board.cmt.model.BoardCmtEntity;
 import com.koreait.basic.dao.BoardCmtDAO;
 
 import javax.servlet.ServletException;

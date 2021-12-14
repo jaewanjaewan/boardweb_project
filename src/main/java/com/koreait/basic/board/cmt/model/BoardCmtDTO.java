@@ -1,4 +1,4 @@
-package com.koreait.basic.board.model;
+package com.koreait.basic.board.cmt.model;
 
 import lombok.Getter;
 import lombok.Setter;

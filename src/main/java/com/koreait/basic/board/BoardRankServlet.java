@@ -19,9 +19,17 @@ public class BoardRankServlet extends HttpServlet { // 조회수, 좋아요, 댓
         switch (type){
             case "1":
                 title = "조회수 top 10";
+                req.setAttribute("item", BoardRankDAO.selBoardHitsRankList());
+                break;
+            case "2":
+                title = "댓글수 top 10";
+                req.setAttribute("item", BoardRankDAO.selBoardCmtRankList());
+                break;
+            case "3":
+                title = "좋아요 top 10";
+                req.setAttribute("item", BoardRankDAO.selBoardHeartRankList());
                 break;
         }
-        req.setAttribute("item", BoardRankDAO.selBoardHitsRankList());
         Utils.displayView(title, "board/rank", req, res);
     }
 

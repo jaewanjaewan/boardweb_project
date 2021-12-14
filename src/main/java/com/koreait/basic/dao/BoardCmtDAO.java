@@ -1,9 +1,9 @@
 package com.koreait.basic.dao;
 
 import com.koreait.basic.DbUtils;
-import com.koreait.basic.board.model.BoardCmtDTO;
-import com.koreait.basic.board.model.BoardCmtEntity;
-import com.koreait.basic.board.model.BoardCmtVO;
+import com.koreait.basic.board.cmt.model.BoardCmtDTO;
+import com.koreait.basic.board.cmt.model.BoardCmtEntity;
+import com.koreait.basic.board.cmt.model.BoardCmtVO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
