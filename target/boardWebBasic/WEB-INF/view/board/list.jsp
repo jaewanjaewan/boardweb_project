@@ -48,11 +48,16 @@
                    <c:if test="${param.searchText != null && (param.searchType == 4 || param.searchType == 5)}">
                        <c:set var="eachWriterNm" value="${fn:replace(eachWriterNm, param.searchText, '<mark>' += param.searchText += '</mark>' )}"/>
                    </c:if>
+
+                   <c:set var ="pImg" value="defaultProfile.png"/>
+                   <c:if test="${item.profileImg != null}">
+                       <c:set var="pImg" value="profile/${item.writer}/${item.profileImg}"/>
+                   </c:if>
                    <tr class="record" onclick="moveToDetail(${item.iboard});"> <%--c out쓰는이유: 자바스크립트로 인한 XSS공격 및 장난 방지, 보통 제목과 내용에씀--%>
                        <td><c:out value="${item.iboard}"/></td>
                        <td>${eachTitle}<span id="cmtcount">${item.cmtcount == 0 ? '' : [item.cmtcount]}</span></td>
                        <td><c:out value="${item.hit}"/></td>
-                       <td>${eachWriterNm}</td>
+                       <td><div class="circular--img circular--size40"><img src="/res/img/${pImg}"/></div>${eachWriterNm}</td>
                        <td><c:out value="${item.rdt}"/></td>
                    </tr>
                </c:forEach>

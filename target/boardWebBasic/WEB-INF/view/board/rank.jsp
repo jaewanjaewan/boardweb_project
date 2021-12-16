@@ -33,3 +33,4 @@
         </c:forEach>
     </table>
 </div>
+<script src="/res/js/board/list.js"></script>

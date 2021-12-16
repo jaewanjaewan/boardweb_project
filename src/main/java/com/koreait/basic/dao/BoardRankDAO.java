@@ -17,7 +17,7 @@ public class BoardRankDAO {
         Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "SELECT A.iboard, A.title, A.writer, A.hit, A.rdt, B.nm AS writerNm " +
+        String sql = "SELECT A.iboard, A.title, A.writer, A.hit as cnt, A.rdt, B.nm AS writerNm " +
                 "FROM t_board A INNER JOIN t_user B ON A.writer = B.iuser " +
                 "WHERE hit > 0 ORDER BY hit DESC LIMIT 10";
         try{
@@ -30,7 +30,7 @@ public class BoardRankDAO {
                         .title(rs.getString("title"))
                         .writer(rs.getInt("writer"))
                         .rdt(rs.getString("rdt"))
-                        .cnt(rs.getInt("hit"))
+                        .cnt(rs.getInt("cnt"))
                         .writerNm(rs.getString("writerNm"))
                         .build();
                 list.add(vo);

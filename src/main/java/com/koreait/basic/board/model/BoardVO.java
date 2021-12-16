@@ -16,4 +16,5 @@ public class BoardVO { //값을 대표하는 객체(불변성), setter가 없음
     private int cmtcount;
     private String writerNm;
     private int cnt;
+    private String profileImg;
 }

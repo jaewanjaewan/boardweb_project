@@ -106,7 +106,7 @@ public class BoardDAO {
         PreparedStatement ps = null;
         ResultSet rs = null;
         List<BoardVO> list = new ArrayList();
-        String sql = "SELECT A.iboard, A.title, A.writer, A.rdt, A.hit, A.cmtcount, B.nm as writerNm " +
+        String sql = "SELECT A.iboard, A.title, A.writer, A.rdt, A.hit, A.cmtcount, B.nm as writerNm, B.profileImg " +
                 " FROM t_board A INNER JOIN t_user B ON A.writer = B.iuser ";
               sql += getSearchWhereString(param);
               sql += " ORDER BY A.iboard DESC " +
@@ -125,6 +125,7 @@ public class BoardDAO {
                 int cmtcount = rs.getInt("cmtcount");
                 String rdt = rs.getString("rdt");
                 String writerNm = rs.getString("writerNm");
+                String profileImg = rs.getString("profileImg");
                 BoardVO vo = BoardVO.builder()
                         .iboard(iboard)
                         .title(title)
@@ -133,6 +134,7 @@ public class BoardDAO {
                         .cmtcount(cmtcount)
                         .rdt(rdt)
                         .writerNm(writerNm)
+                        .profileImg(profileImg)
                         .build();
                 list.add(vo);
             }
